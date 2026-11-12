@@ -1,0 +1,4 @@
+
+# Fichiers de données volumineux
+data/raw/*
+data/processed/*
