@@ -15,7 +15,7 @@ Les institutions patrimoniales décrivent leur collections avec des formats et d
 **Provenances des données**
 
 Trois fichiers de données sont utilisés et sont libres de droits : 
-- La base [*Joconde de Troyes*](https://www.data.gouv.fr/datasets/collections-des-musees-de-france-base-joconde-de-troyes-champagne-metropole?utm_source=chatgpt.com) qui décrit les oeuvres de musées de France (XLSX)
-- La base [*Photographies: Fonds de la guerre 14-18*](https://www.data.gouv.fr/datasets/photographies-fonds-de-la-guerre-14-18-2?utm_source=chatgpt.com) qui contient des photographies concernant la première guerre mondiales (JSON)
-- La base [*Muséofile*](https://www.data.gouv.fr/datasets/musees-de-france-base-museofile?utm_source=chatgpt.com) qui répertorie les Musées de France (CSV)
+- La base [*Joconde de Troyes*](https://www.data.gouv.fr/datasets/collections-des-musees-de-france-base-joconde-de-troyes-champagne-metropole) qui décrit les oeuvres de musées de France (XLSX)
+- La base [*Photographies: Fonds de la guerre 14-18*](https://www.data.gouv.fr/datasets/photographies-fonds-de-la-guerre-14-18-2) qui contient des photographies concernant la première guerre mondiales (JSON)
+- La base [*Muséofile*](https://www.data.gouv.fr/datasets/musees-de-france-base-museofile) qui répertorie les Musées de France (CSV)
 
