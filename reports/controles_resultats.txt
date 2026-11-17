@@ -1,0 +1,121 @@
+   source   | nb_objets | avec_auteur | avec_lieu | avec_annees 
+------------+-----------+-------------+-----------+-------------
+ Joconde    |      4922 |        4798 |      4922 |        4896
+ Palissy MH |     24995 |        9613 |     24993 |       24445
+(2 rows)
+
+    departement     |   source   | nb_objets 
+--------------------+------------+-----------
+ Ardennes           | Palissy MH |      1394
+ Aube               | Joconde    |      4922
+ Aube               | Palissy MH |      4984
+ Bas-Rhin           | Palissy MH |      2294
+ Haut-Rhin          | Palissy MH |      2093
+ Haute-Marne        | Palissy MH |      2139
+ Marne              | Palissy MH |      3835
+ Meurthe-et-Moselle | Palissy MH |      2262
+ Meuse              | Palissy MH |      2836
+ Moselle            | Palissy MH |      1244
+ Vosges             | Palissy MH |      1912
+(11 rows)
+
+   source   | siecle_approx | nb_objets 
+------------+---------------+-----------
+ Joconde    |            11 |        11
+ Joconde    |            12 |        21
+ Joconde    |            13 |        41
+ Joconde    |            14 |        25
+ Joconde    |            15 |        63
+ Joconde    |            16 |       230
+ Joconde    |            17 |       359
+ Joconde    |            18 |       381
+ Joconde    |            19 |      2541
+ Joconde    |            20 |      1224
+ Palissy MH |             1 |         1
+ Palissy MH |             2 |         9
+ Palissy MH |             3 |        26
+ Palissy MH |             4 |         1
+ Palissy MH |             5 |         4
+ Palissy MH |             6 |         2
+ Palissy MH |             7 |         6
+ Palissy MH |             8 |         6
+ Palissy MH |             9 |        12
+ Palissy MH |            10 |         5
+ Palissy MH |            11 |        30
+ Palissy MH |            12 |       261
+ Palissy MH |            13 |       219
+ Palissy MH |            14 |       553
+ Palissy MH |            15 |      1315
+ Palissy MH |            16 |      4788
+ Palissy MH |            17 |      3897
+ Palissy MH |            18 |      8240
+ Palissy MH |            19 |      3653
+ Palissy MH |            20 |      1413
+ Palissy MH |            21 |         4
+(31 rows)
+
+          nom           | nb_objets 
+------------------------+-----------
+ Dubois Paul            |       307
+ DERAIN André           |       157
+ LANCELOT Gustave       |       140
+ Wingerter Victor       |       123
+ Bugatti                |       121
+ Ruhlmann Loys          |       116
+ GAUSSEN Alfred         |       110
+ SIMART Pierre Charles  |       102
+ KOCH Paul              |        96
+ FICHOT Michel Charles  |        85
+ ARNAUD Anne François   |        75
+ SCHITZ Jules Nicolas   |        70
+ FINEZ Grégoire Nicolas |        67
+ BOUCHER Alfred         |        56
+ Le Gray Gustave        |        56
+(15 rows)
+
+   source   | objets_anonymes | objets_avec_auteur 
+------------+-----------------+--------------------
+ Joconde    |            1065 |               4798
+ Palissy MH |            4763 |               9613
+(2 rows)
+
+ intervalle_de_plus_de_300_ans | annee_dans_le_futur 
+-------------------------------+---------------------
+                           131 |                   0
+(1 row)
+
+ id_objet | id_source | reference_source |                                               titre                                                
+----------+-----------+------------------+----------------------------------------------------------------------------------------------------
+    19751 |         2 | PM10004948       | tableau : Portrait présumé de la comédienne Alexandrine Noblet, sociétaire de la Comédie Française
+    25159 |         2 | PM52001686       | fonts baptismaux
+(2 rows)
+
+ auteurs_sans_objet | lieux_sans_objet 
+--------------------+------------------
+                  0 |                0
+(1 row)
+
+   source   |                               domaine                                | nb_objets 
+------------+----------------------------------------------------------------------+-----------
+ Palissy MH | sculpture                                                            |     11585
+ Palissy MH | menuiserie ou ébénisterie                                            |      3756
+ Palissy MH | peinture                                                             |      3115
+ Palissy MH | orfèvrerie et autres objets en métal                                 |      2628
+ Joconde    | peinture                                                             |      1336
+ Joconde    | dessin                                                               |      1196
+ Joconde    | sculpture                                                            |      1090
+ Palissy MH |                                                                      |       947
+ Palissy MH | patrimoine instrumental                                              |       711
+ Joconde    | estampe                                                              |       642
+ Palissy MH | céramique                                                            |       525
+ Palissy MH | textile                                                              |       504
+ Palissy MH | patrimoine industriel scientifique et technique (PIST) : automobile  |       447
+ Palissy MH | vitrail                                                              |       441
+ Joconde    | photographie                                                         |       194
+ Palissy MH | patrimoine industriel scientifique et technique (PIST)               |       104
+ Palissy MH | patrimoine écrit (imprimé, manuscrit, relié)                         |        72
+ Joconde    | sculpture ; croyances - coutumes                                     |        65
+ Palissy MH | patrimoine industriel scientifique et technique (PIST) : ferroviaire |        56
+ Joconde    | dessin ; cartes - plans                                              |        51
+(20 rows)
+

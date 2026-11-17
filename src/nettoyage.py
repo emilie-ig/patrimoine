@@ -98,24 +98,43 @@ def premier_auteur(texte):
     return {"nom": nom, "cle": k, "naissance": naissance, "deces": deces, "anonyme": False}
 
 
+# --------------------------------------------------
+# Dates : texte d'origine -> années de début et de fin
+# --------------------------------------------------
 def _un_intervalle(morceau):
-    """Transforme une expression de date en (année_début, année_fin) ou None si on ne la comprend pas
- 
+    """Transforme une expression de date en (année_début, année_fin), ou None si on ne la comprend pas.
+
     Exemples :
-        "1713" -> (1713, 1713)
-        "17e siècle" -> (1601, 1700)
-        "1er quart 20e siècle" -> (1901, 1925)
-        "2e moitié 19e siècle" -> (1851, 1900)
+        "1713"                  -> (1713, 1713)
+        "17e siècle"            -> (1601, 1700)
+        "1er quart 20e siècle"  -> (1901, 1925)
+        "2e moitié 19e siècle"  -> (1851, 1900)
     """
     morceau = morceau.strip().lower()
- 
+    morceau = re.sub(r"\s*\(\?\)", "", morceau).strip()   # « 17e siècle (?) » : on ignore le doute (le texte d'origine est conservé)
+
+    # « milieu 18e siècle » : on prend les années 41 à 60 du siècle (choix d'interprétation)
+    m = re.fullmatch(r"milieu\s+(\d{1,2})\s*(?:er|re|ère|e|ème)?\s*si[èe]cle", morceau)
+    if m:
+        base = (int(m.group(1)) - 1) * 100
+        return base + 41, base + 60
+
+    # « limite 18e siècle 19e siècle » : on prend 10 ans de part et d'autre du changement de siècle
+    m = re.fullmatch(
+        r"limite\s+(\d{1,2})\s*(?:er|re|ère|e|ème)?\s*si[èe]cle\s+(\d{1,2})\s*(?:er|re|ère|e|ème)?\s*si[èe]cle",
+        morceau,
+    )
+    if m and int(m.group(2)) == int(m.group(1)) + 1:
+        frontiere = int(m.group(1)) * 100
+        return frontiere - 9, frontiere + 10
+
     # une année seule : "1713"
     m = re.fullmatch(r"(\d{3,4})", morceau)
     if m:
         a = int(m.group(1))
         return a, a
- 
-    # un siècle éventuellement précisé par un quart ou une moitié
+
+    # un siècle, éventuellement précisé par un quart ou une moitié
     m = re.fullmatch(
         r"(?:(\d)\s*(?:er|re|ère|e|ème)\s+(quart|moitié|moitie)\s+)?"
         r"(\d{1,2})\s*(?:er|re|ère|e|ème)?\s*si[èe]cle",
@@ -133,11 +152,10 @@ def _un_intervalle(morceau):
     if precision.startswith("moiti") and 1 <= rang <= 2:
         return base + (rang - 1) * 50 + 1, base + rang * 50
     return None
- 
- 
+
 def annees_depuis_texte(texte):
-    """Renvoie (année_début, année_fin) pour un texte de date, ou (None, None)
- 
+    """Renvoie (année_début, année_fin) pour un texte de date, ou (None, None).
+
     Plusieurs valeurs séparées par « ; » : on prend du plus petit début au plus grand fin.
     Si une valeur n'est pas comprise, on renonce : ces cas sont comptés dans le rapport.
     """
